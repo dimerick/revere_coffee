@@ -59,10 +59,10 @@ class Navbar extends React.Component {
 
         let layOutCls = '';
 
-        let logo = process.env.URL+this.props.logo.imagen.data.attributes.url;
+        let logo = process.env.NEXT_PUBLIC_URL+this.props.logo.imagen.data.attributes.url;
         if (pathname == '/digital-marketing'){
             layOutCls = 'marketing-navbar';
-            logo = process.env.URL+this.props.logo.imagen.data.attributes.url;
+            logo = process.env.NEXT_PUBLIC_URL+this.props.logo.imagen.data.attributes.url;
         }
 
         const { collapsed } = this.state;

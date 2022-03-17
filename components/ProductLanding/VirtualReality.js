@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 class VirtualReality extends Component {
     render() {
@@ -6,23 +7,38 @@ class VirtualReality extends Component {
             <section className="next-generation-virtual-reality ptb-100">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Next-generation virtual Reality</h2>
+                        {console.log(this.props)}
+                        <h2>{this.props.seccion.titulo}</h2>
                         <div className="bar"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        {ReactHtmlParser(this.props.seccion.descripcion)}
                     </div>
-
+                    
                     <div className="row">
-                        <div className="col-lg-6 col-md-6">
+                    {
+                        this.props.razones.map(
+                            (razon) => (
+                                
+                                <>
+            
+                                <div className="col-lg-6 col-md-6">
                             <div className="single-item">
                                 <div className="icon">
-                                    <i className="icofont-listine-dots"></i>
+                                    {/* <i className="icofont-listine-dots"></i> */}
+                                    <img src={process.env.NEXT_PUBLIC_URL+razon.attributes.icono.data.attributes.url}/>
                                 </div>
-                                <h3>Mobile Interface Design</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida leo porttitor pretium ullamcorper. Fusce consectetur turpis nec dolor laoreet ultrices. In a venenatis leo.</p>
+                                <h3>{ReactHtmlParser(razon.attributes.titulo)}</h3>
+                                {ReactHtmlParser(razon.attributes.descripcion)}
                             </div>
                         </div>
+                        </>
+                                
+                                )
+                        )
+                    }
 
-                        <div className="col-lg-6 col-md-6">
+                        
+
+                       {/*  <div className="col-lg-6 col-md-6">
                             <div className="single-item">
                                 <div className="icon">
                                     <i className="icofont-camera-alt"></i>
@@ -70,8 +86,10 @@ class VirtualReality extends Component {
                                 <h3>Engaging Tours</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida leo porttitor pretium ullamcorper. Fusce consectetur turpis nec dolor laoreet ultrices. In a venenatis leo.</p>
                             </div>
-                        </div>
+                        </div> */}
+
                     </div>
+
                 </div>
             </section>
         );

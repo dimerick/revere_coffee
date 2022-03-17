@@ -52,9 +52,31 @@ class ProductLanding extends React.Component {
                   }
                 }
               }
+              seccion_diez_razones{
+                titulo
+                descripcion
+              }
+            }
+          }
+        
+        }
+        razonElegirnos{
+          data{
+            id
+            attributes{
+              icono{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              titulo
+              descripcion
             }
           }
         }
+        
       }
       `,
     });
@@ -83,7 +105,10 @@ class ProductLanding extends React.Component {
                />
                <Features />
                <NewFeatures />
-               <VirtualReality />
+               <VirtualReality 
+               seccion={data.homePage.data.attributes.seccion_diez_razones}
+               razones={data.razonElegirnos.data}
+               />
                <Overview />
                <WorkProcess />
                <Works />

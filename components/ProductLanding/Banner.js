@@ -46,7 +46,7 @@ class Banner extends Component {
                                     
                                     <div className="col-lg-6 col-md-12">
                                         <div className="product-image">
-                                            <img src={process.env.URL+this.props.banner.imagen.data.attributes.url} alt="watch" />
+                                            <img src={process.env.NEXT_PUBLIC_URL+this.props.banner.imagen.data.attributes.url} alt="watch" />
                                             {/* <img src='/images/watch-2.png' alt="watch" /> */}
                                             
                                             <div className="offer-badge">
