@@ -1182,7 +1182,7 @@ Main Banner CSS
 
         img {
             animation: movebounce 6s linear infinite;
-            width: 300px;
+            width: 500px;
 
             &:nth-child(2) {
                 position: absolute;
@@ -6984,4 +6984,15 @@ textarea.form-control {
         width: 30px;
         height: 30px;
     }
+}
+
+
+/*Estilos personalizados*/
+
+.main-banner.product-home .shape4{
+    display: none;
+}
+
+.shape9{
+    display: none;
 }

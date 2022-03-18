@@ -1294,7 +1294,7 @@ Main Banner CSS
 .main-banner .product-image img {
   -webkit-animation: movebounce 6s linear infinite;
           animation: movebounce 6s linear infinite;
-  width: 300px;
+  width: 500px;
 }
 
 .main-banner .product-image img:nth-child(2) {
@@ -7340,5 +7340,14 @@ textarea.form-control {
 .icon img {
   width: 30px;
   height: 30px;
+}
+
+/*Estilos personalizados*/
+.main-banner.product-home .shape4 {
+  display: none;
+}
+
+.shape9 {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
