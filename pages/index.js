@@ -15,6 +15,7 @@ import Download from '../components/ProductLanding/Download';
 import Platform from '../components/ProductLanding/Platform';
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
+import AboutContent from '../components/About/AboutContent';
 
 class ProductLanding extends React.Component {
     
@@ -148,6 +149,18 @@ class ProductLanding extends React.Component {
                 }
               }
               
+              founder{
+                titulo
+                descripcion
+                imagen{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+              }
+              
             }
           }
         
@@ -188,6 +201,9 @@ class ProductLanding extends React.Component {
                <VirtualReality 
                seccion={data.homePage.data.attributes.diez_razones}
                
+               />
+               <AboutContent 
+               seccion={data.homePage.data.attributes.founder}
                />
                <Overview />
                <WorkProcess />

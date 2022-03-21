@@ -20,7 +20,7 @@ const Works = (props) => {
 
             ))
     
-            console.log(images);
+            
     return (
         <section className="gallery-area ptb-100 pb-0">
             <div className="container">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 class AboutContent extends Component {
     render() {
@@ -9,25 +10,20 @@ class AboutContent extends Component {
                         <div className="col-lg-6 col-md-12">
                             <div className="about-content">
                                 <div className="section-title">
-                                    <h2>Our process is simple; Our products are powerful.</h2>
+                                    <h2>{this.props.seccion.titulo}</h2>
                                     <div className="bar"></div>
-                                    <p>Lorem ipsum dolor sit amet, con se ctetur adipiscing elit. In sagittis eg esta ante, sed viverra nunc tinci dunt nec elei fend et tiram.</p>
                                 </div>
-                                <p>Business-to-business metrics analytics value proposition funding angel investor entrepreneur alpha ramen equity gamification. Social proof partner network research.</p>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis egestas ante, sed viverra nunc tincidunt nec nteger nonsed condimntum elit, sit amet feugiat lorem. Proin tempus sagittis velit vitae scelerisque.</p>
-
-                                <p>Lorem ipsum dolor sit amet, con se ctetur adipiscing elit. In sagittis eg esta ante, sed viverra nunc tinci dunt nec elei fend et tiram.</p>
+                                {ReactHtmlParser(this.props.seccion.descripcion)}
                             </div>
                         </div>
 
                         <div className="col-lg-6 col-md-12">
-                            <img src='/images/marketing.png' alt="image" />
+                            <img src={process.env.NEXT_PUBLIC_URL+this.props.seccion.imagen.data.attributes.url} alt="image" />
                         </div>
                     </div>
                 </div>
 
-                <div className="about-inner-area">
+                {/* <div className="about-inner-area">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-3 col-md-6">
@@ -59,7 +55,8 @@ class AboutContent extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
+
             </section>
         );
     }
