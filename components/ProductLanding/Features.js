@@ -3,6 +3,18 @@ import Link from 'next/link';
 import ReactHtmlParser from 'react-html-parser';
 
 class Features extends Component {
+    /* items = [];
+    componentDidMount(){
+        this.props.seccion.items.map(
+            (item, i) => {
+                this.items = "Hola";
+                
+                console.log(this.items);
+                
+            }
+        )
+    } */
+
     render() {
         return (
             <section className="features-area product-features ptb-100">
@@ -25,7 +37,7 @@ class Features extends Component {
                         <div className="col-lg-7 col-md-12">
                             <div className="row">
 
-                            {
+                            {/* {
                         this.props.seccion.items.map(
                             (item) => (
                                 
@@ -43,7 +55,50 @@ class Features extends Component {
                                 
                                 )
                         )
+                    } */}
+
+
+                     {
+                        this.props.seccion.items.map(
+                            (item, i, arr) => (
+                                
+                                
+
+                                i%2==0 && arr[i+1]?
+                                <>
+                                <div className="col-lg-6 col-md-6">
+                                    <div className="single-holder-box mt-50">
+                                        <img src={arr[i] && process.env.NEXT_PUBLIC_URL+arr[i].imagen.data.attributes.url} alt="image" />
+                                        <h3>{arr[i] && ReactHtmlParser(arr[i].titulo)} </h3>
+                                        {arr[i] && ReactHtmlParser(arr[i].descripcion)}
+                                    </div>
+
+                                    <div className="single-holder-box mt-30">
+                                        <img src={process.env.NEXT_PUBLIC_URL+arr[i+1].imagen.data.attributes.url} alt="image" />
+                                        <h3>{ReactHtmlParser(arr[i+1].titulo)}</h3>
+                                        {ReactHtmlParser(arr[i+1].descripcion)}
+                                    </div>
+                                </div>
+                                </>
+                                :
+                                i%2==0?
+                                <>
+                                <div className="col-lg-6 col-md-6">
+                                <div className="single-holder-box mt-50">
+                                        <img src={arr[i] && process.env.NEXT_PUBLIC_URL+arr[i].imagen.data.attributes.url} alt="image" />
+                                        <h3>{arr[i] && ReactHtmlParser(arr[i].titulo)} </h3>
+                                        {arr[i] && ReactHtmlParser(arr[i].descripcion)}
+                                    </div>
+                                </div>
+                                </>
+                                :
+                                <>
+                                </>
+                                
+                                )
+                        )
                     }
+
 
                                 {/* <div className="col-lg-6 col-md-6">
                                     <div className="single-holder-box mt-50">
