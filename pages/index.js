@@ -117,7 +117,9 @@ class ProductLanding extends React.Component {
                <Banner 
                banner={data.homePage.data.attributes.banner}
                />
-               <Features />
+               <Features 
+               seccion={data.homePage.data.attributes.producto_cuatro_items}
+               />
                <NewFeatures />
                <VirtualReality 
                seccion={data.homePage.data.attributes.diez_razones}

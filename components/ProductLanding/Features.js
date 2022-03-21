@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import ReactHtmlParser from 'react-html-parser';
 
 class Features extends Component {
     render() {
@@ -10,12 +11,10 @@ class Features extends Component {
                         <div className="col-lg-5 col-md-12">
                             <div className="features-holder-content">
                                 <div className="section-title">
-                                    <h2>A Watch Can Make Your Life Easy and Comfortable</h2>
+                                    <h2>{this.props.seccion.titulo}</h2>
                                     <div className="bar"></div>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                                    {ReactHtmlParser(this.props.seccion.descripcion)}
                                 </div>
-
-                                <p>We’re also experts at finding the sweet spot between Google’s guidelines and what is commercially right for you. We have progressive theories on search as a tool for retention of customers, not just for acquisition. we always measure, always analyze and always innovate.</p>
 
                                 <Link href="/services">
                                     <a className="btn btn-primary">Our Services</a>
@@ -25,7 +24,28 @@ class Features extends Component {
 
                         <div className="col-lg-7 col-md-12">
                             <div className="row">
-                                <div className="col-lg-6 col-md-6">
+
+                            {
+                        this.props.seccion.items.map(
+                            (item) => (
+                                
+                                <>
+                            <div className="col-lg-6 col-md-6">
+                                    <div className="single-holder-box mt-50">
+                                        <img src={process.env.NEXT_PUBLIC_URL+item.imagen.data.attributes.url} alt="image" />
+                                        <h3>{ReactHtmlParser(item.titulo)}</h3>
+                                        {ReactHtmlParser(item.descripcion)}
+                                    </div>
+
+                                    
+                                </div>
+                            </>
+                                
+                                )
+                        )
+                    }
+
+                                {/* <div className="col-lg-6 col-md-6">
                                     <div className="single-holder-box mt-50">
                                         <img src='/images/watch-1.png' alt="image" />
                                         <h3>Camera Resulation</h3>
@@ -51,7 +71,8 @@ class Features extends Component {
                                         <h3>Healthy Battery Life</h3>
                                         <p>Duis hendrerit eget dolor non lora pulvinar. In conse.</p>
                                     </div>
-                                </div>
+                                </div> */}
+
                             </div>
                         </div>
                     </div>
