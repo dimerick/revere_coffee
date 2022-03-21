@@ -71,33 +71,7 @@ class Features extends Component {
                     }
 
 
-                                {/* <div className="col-lg-6 col-md-6">
-                                    <div className="single-holder-box mt-50">
-                                        <img src='/images/watch-1.png' alt="image" />
-                                        <h3>Camera Resulation</h3>
-                                        <p>Duis hendrerit eget dolor non lora pulvinar. In conse.</p>
-                                    </div>
-
-                                    <div className="single-holder-box mt-30">
-                                        <img src='/images/watch-2.png' alt="image" />
-                                        <h3>High Speed Shooting</h3>
-                                        <p>Duis hendrerit eget dolor non lora pulvinar. In conse.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6 col-md-6">
-                                    <div className="single-holder-box">
-                                        <img src='/images/watch-2.png' alt="image" />
-                                        <h3>Powerful Control Panel</h3>
-                                        <p>Duis hendrerit eget dolor non lora pulvinar. In conse.</p>
-                                    </div>
-
-                                    <div className="single-holder-box mt-30">
-                                        <img src='/images/watch-1.png' alt="image" />
-                                        <h3>Healthy Battery Life</h3>
-                                        <p>Duis hendrerit eget dolor non lora pulvinar. In conse.</p>
-                                    </div>
-                                </div> */}
+                                
 
                             </div>
                         </div>
@@ -109,7 +83,23 @@ class Features extends Component {
                         <div className="row h-100 justify-content-center align-items-center">
                             <div className="col-lg-6 col-md-12">
                                 <div className="features-inner-content">
-                                    <div className="features-item">
+
+                                {
+                        this.props.seccion2.items.map(
+                            (item, i, arr) => (
+                            <>
+                            <div className="features-item">
+                                        <div className="icon">
+                                        <img src={process.env.NEXT_PUBLIC_URL+item.imagen.data.attributes.url} alt="image" />
+                                        </div>
+                                        <h3>{item.titulo}</h3>
+                                        {ReactHtmlParser(item.descripcion)}
+                                    </div>
+                            </>
+
+                            ))}
+
+                                    {/* <div className="features-item">
                                         <div className="icon">
                                             <i className="icofont-download"></i>
                                         </div>
@@ -131,13 +121,14 @@ class Features extends Component {
                                         </div>
                                         <h3>QR Code Scaner</h3>
                                         <p>Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project to an individual person's workload.</p>
-                                    </div>
+                                    </div> */}
+                                    
                                 </div>
                             </div>
 
                             <div className="col-lg-6 col-md-12">
                                 <div className="features-image text-center">
-                                    <img src='/images/watch-1.png' alt="image" />
+                                    <img src={process.env.NEXT_PUBLIC_URL+this.props.seccion2.imagen.data.attributes.url} alt="image" />
                                 </div>
                             </div>
                         </div>

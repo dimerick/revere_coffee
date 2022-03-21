@@ -115,6 +115,27 @@ class ProductLanding extends React.Component {
                 }
               }
               
+              caracteristicas_producto{
+                imagen{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+                items{
+                  titulo
+                  descripcion
+                  imagen{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+              
             }
           }
         
@@ -147,6 +168,7 @@ class ProductLanding extends React.Component {
                />
                <Features 
                seccion={data.homePage.data.attributes.producto_cuatro_items}
+               seccion2={data.homePage.data.attributes.caracteristicas_producto}
                />
                <NewFeatures 
                seccion={data.homePage.data.attributes.sostenibilidad}
