@@ -1,34 +1,74 @@
 import React from 'react';
 import Link from 'next/link';
 import Lightbox from 'react-image-lightbox';
+import ReactHtmlParser from 'react-html-parser';
 
 const images = [
-    '/images/gallery1.jpg',
-    '/images/gallery2.jpg',
-    '/images/gallery3.jpg',
-    '/images/gallery4.jpg',
-    '/images/gallery5.jpg',
-    '/images/gallery6.jpg',
-    '/images/gallery7.jpg',
-    '/images/gallery8.jpg'
+    
 ]
 
-const Works = () => {
+
+
+const Works = (props) => {
     const [photoIndex, setPhotoIndex] = React.useState(0);
     const [isOpenImage, setIsOpenImage] = React.useState(false);
 
+    
+    props.seccion.items.data.map(
+        (item, i, arr) => (
+            images.push(process.env.NEXT_PUBLIC_URL+item.attributes.url)
+
+            ))
+    
+            console.log(images);
     return (
         <section className="gallery-area ptb-100 pb-0">
             <div className="container">
                 <div className="section-title">
-                    <h2>User Gallery</h2>
+                    <h2>{props.seccion.titulo}</h2>
                     <div className="bar"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    {ReactHtmlParser(props.seccion.descripcion)}
                 </div>
             </div>
 
+            {isOpenImage && (
+                    <Lightbox
+                        mainSrc={images[photoIndex]}
+                        nextSrc={images[(photoIndex + 1) % images.length]}
+                        prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                        onCloseRequest={() => setIsOpenImage(false)}
+                        onMovePrevRequest={() =>
+                            setPhotoIndex((photoIndex + images.length - 1) % images.length)
+                        }
+                        onMoveNextRequest={() =>
+                            setPhotoIndex((photoIndex + 1) % images.length)
+                        }
+                    />
+                )}
+
             <div className="row m-0">
-                <div className="col-lg-3 col-md-6 p-0">
+
+                {
+                    props.seccion.items.data.map(
+                        (item, i, arr) => (
+                            <>
+                            <div className="col-lg-3 col-md-6 p-0">
+                    <div className="single-image">
+                        <img src={process.env.NEXT_PUBLIC_URL+item.attributes.url} alt="gallery" />
+                        <div 
+                            className="popup-btn"
+                            onClick={e => { setIsOpenImage(true); setPhotoIndex(i);}}
+                        >
+                            <i className="icofont-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                            </>
+                        )
+                        )
+                }
+
+                {/* <div className="col-lg-3 col-md-6 p-0">
                     <div className="single-image">
                         <img src='/images/gallery1.jpg' alt="gallery" />
                         <div 
@@ -52,20 +92,7 @@ const Works = () => {
                     </div>
                 </div>
 
-                {isOpenImage && (
-                    <Lightbox
-                        mainSrc={images[photoIndex]}
-                        nextSrc={images[(photoIndex + 1) % images.length]}
-                        prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-                        onCloseRequest={() => setIsOpenImage(false)}
-                        onMovePrevRequest={() =>
-                            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-                        }
-                        onMoveNextRequest={() =>
-                            setPhotoIndex((photoIndex + 1) % images.length)
-                        }
-                    />
-                )}
+                
 
                 <div className="col-lg-3 col-md-6 p-0">
                     <div className="single-image">
@@ -137,7 +164,8 @@ const Works = () => {
                             <i className="icofont-plus"></i>
                         </div> 
                     </div>
-                </div>
+                </div> */}
+
             </div>
         </section>
     );

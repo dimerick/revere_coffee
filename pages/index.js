@@ -136,6 +136,18 @@ class ProductLanding extends React.Component {
                 }
               }
               
+              galeria{
+                titulo
+                descripcion
+                items{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+              }
+              
             }
           }
         
@@ -179,7 +191,9 @@ class ProductLanding extends React.Component {
                />
                <Overview />
                <WorkProcess />
-               <Works />
+               <Works 
+               seccion={data.homePage.data.attributes.galeria}
+               />
                <LatestProducts />
                <Blog />
                <Feedback />
