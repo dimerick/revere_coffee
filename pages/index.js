@@ -52,31 +52,45 @@ class ProductLanding extends React.Component {
                   }
                 }
               }
-              seccion_diez_razones{
+              
+              
+              producto_cuatro_items{
                 titulo
                 descripcion
-              }
-            }
-          }
-        
-        }
-        razonElegirnos{
-          data{
-            id
-            attributes{
-              icono{
-                data{
-                  attributes{
-                    url
+                nombre_boton
+                items{
+                  titulo
+                  descripcion
+                  imagen{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
                   }
                 }
               }
-              titulo
-              descripcion
+              
+              diez_razones{
+                titulo
+                items{
+                  titulo
+                  descripcion
+                  icono{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+              
             }
           }
-        }
         
+        }
+      
       }
       `,
     });
@@ -106,8 +120,8 @@ class ProductLanding extends React.Component {
                <Features />
                <NewFeatures />
                <VirtualReality 
-               seccion={data.homePage.data.attributes.seccion_diez_razones}
-               razones={data.razonElegirnos.data}
+               seccion={data.homePage.data.attributes.diez_razones}
+               
                />
                <Overview />
                <WorkProcess />

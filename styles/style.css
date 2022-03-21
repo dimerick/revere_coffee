@@ -7338,8 +7338,8 @@ textarea.form-control {
 }
 
 .icon img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 /*Estilos personalizados*/
@@ -7349,5 +7349,9 @@ textarea.form-control {
 
 .shape9 {
   display: none;
+}
+
+.next-generation-virtual-reality .single-item .icon {
+  font-size: 0px;
 }
 /*# sourceMappingURL=style.css.map */

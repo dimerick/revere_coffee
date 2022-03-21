@@ -10,12 +10,12 @@ class VirtualReality extends Component {
                         {console.log(this.props)}
                         <h2>{this.props.seccion.titulo}</h2>
                         <div className="bar"></div>
-                        {ReactHtmlParser(this.props.seccion.descripcion)}
+                        
                     </div>
                     
                     <div className="row">
                     {
-                        this.props.razones.map(
+                        this.props.seccion.items.map(
                             (razon) => (
                                 
                                 <>
@@ -24,10 +24,10 @@ class VirtualReality extends Component {
                             <div className="single-item">
                                 <div className="icon">
                                     {/* <i className="icofont-listine-dots"></i> */}
-                                    <img src={process.env.NEXT_PUBLIC_URL+razon.attributes.icono.data.attributes.url}/>
+                                    <img src={process.env.NEXT_PUBLIC_URL+razon.icono.data.attributes.url}/>
                                 </div>
-                                <h3>{ReactHtmlParser(razon.attributes.titulo)}</h3>
-                                {ReactHtmlParser(razon.attributes.descripcion)}
+                                <h3>{ReactHtmlParser(razon.titulo)}</h3>
+                                {ReactHtmlParser(razon.descripcion)}
                             </div>
                         </div>
                         </>
