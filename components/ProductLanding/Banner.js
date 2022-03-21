@@ -49,10 +49,10 @@ class Banner extends Component {
                                             <img src={process.env.NEXT_PUBLIC_URL+this.props.banner.imagen.data.attributes.url} alt="watch" />
                                             {/* <img src='/images/watch-2.png' alt="watch" /> */}
                                             
-                                            <div className="offer-badge">
+                                            {/* <div className="offer-badge">
                                                 50%
                                                 <span>OFF</span>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
