@@ -7,7 +7,7 @@ class VirtualReality extends Component {
             <section className="next-generation-virtual-reality ptb-100">
                 <div className="container">
                     <div className="section-title">
-                        {console.log(this.props)}
+                        
                         <h2>{this.props.seccion.titulo}</h2>
                         <div className="bar"></div>
                         

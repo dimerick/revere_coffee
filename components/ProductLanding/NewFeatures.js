@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 class NewFeatures extends Component {
     render() {
@@ -8,18 +9,38 @@ class NewFeatures extends Component {
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
                             <div className="new-features-img">
-                                <img src='/images/feature-img-with-app.png' alt="image" />
+                                <img src={process.env.NEXT_PUBLIC_URL+this.props.seccion.imagen.data.attributes.url} alt="image" />
                             </div>
                         </div>
 
                         <div className="col-lg-6 col-md-12">
                             <div className="new-features-content">
                                 <div className="section-title">
-                                    <h2>Know yourself, Know your health</h2>
+                                    <h2>{this.props.seccion.titulo}</h2>
                                     <div className="bar"></div>
                                 </div>
 
+                                {
+                        this.props.seccion.items.map(
+                            (item, i, arr) => (
+
+                                <>
                                 <div className="single-inner-features">
+                                
+                                <img src={process.env.NEXT_PUBLIC_URL+item.imagen.data.attributes.url}/>
+                                
+                                
+                                    <h3>{item.titulo}</h3>
+                                    {ReactHtmlParser(item.descripcion)}
+                                </div>
+                                </>
+                            )
+                            
+                            )
+                            
+                            }
+
+                                {/* <div className="single-inner-features">
                                     <i className="icofont-download"></i>
                                     <h3>Download App</h3>
                                     <p>Progressively expedite bleeding-edge catalysts for change via resource sucking channels. Energistically expedite.</p>
@@ -41,7 +62,8 @@ class NewFeatures extends Component {
                                     <i className="icofont-blood-drop"></i>
                                     <h3>Blood Pressure Management</h3>
                                     <p>Progressively expedite bleeding-edge catalysts for change via resource sucking channels. Energistically expedite.</p>
-                                </div>
+                                </div> */}
+
                             </div>
                         </div>
                     </div>

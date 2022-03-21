@@ -86,6 +86,35 @@ class ProductLanding extends React.Component {
                 }
               }
               
+              sostenibilidad{
+                titulo
+                imagenFondo{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+                imagen{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+                items{
+                  titulo
+                  descripcion
+                  imagen{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+              
             }
           }
         
@@ -95,7 +124,7 @@ class ProductLanding extends React.Component {
       `,
     });
   
-    console.log(data);
+    
     return {
       props: {
         data: data,
@@ -106,8 +135,7 @@ class ProductLanding extends React.Component {
     render() {
       const data = this.props.props.data;
       const url = client.link.options.uri.replace('/graphql', '')
-      console.log(data)
-        
+      console.log(data);
         return (
             <>
                <Navbar 
@@ -120,7 +148,9 @@ class ProductLanding extends React.Component {
                <Features 
                seccion={data.homePage.data.attributes.producto_cuatro_items}
                />
-               <NewFeatures />
+               <NewFeatures 
+               seccion={data.homePage.data.attributes.sostenibilidad}
+               />
                <VirtualReality 
                seccion={data.homePage.data.attributes.diez_razones}
                

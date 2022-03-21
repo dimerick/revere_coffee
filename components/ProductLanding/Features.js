@@ -3,17 +3,7 @@ import Link from 'next/link';
 import ReactHtmlParser from 'react-html-parser';
 
 class Features extends Component {
-    /* items = [];
-    componentDidMount(){
-        this.props.seccion.items.map(
-            (item, i) => {
-                this.items = "Hola";
-                
-                console.log(this.items);
-                
-            }
-        )
-    } */
+    
 
     render() {
         return (
@@ -37,25 +27,6 @@ class Features extends Component {
                         <div className="col-lg-7 col-md-12">
                             <div className="row">
 
-                            {/* {
-                        this.props.seccion.items.map(
-                            (item) => (
-                                
-                                <>
-                            <div className="col-lg-6 col-md-6">
-                                    <div className="single-holder-box mt-50">
-                                        <img src={process.env.NEXT_PUBLIC_URL+item.imagen.data.attributes.url} alt="image" />
-                                        <h3>{ReactHtmlParser(item.titulo)}</h3>
-                                        {ReactHtmlParser(item.descripcion)}
-                                    </div>
-
-                                    
-                                </div>
-                            </>
-                                
-                                )
-                        )
-                    } */}
 
 
                      {

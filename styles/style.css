@@ -7354,4 +7354,14 @@ textarea.form-control {
 .next-generation-virtual-reality .single-item .icon {
   font-size: 0px;
 }
+
+.new-features-content .single-inner-features img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  width: 30px;
+  height: 30px;
+}
 /*# sourceMappingURL=style.css.map */
