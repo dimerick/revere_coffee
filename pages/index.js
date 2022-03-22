@@ -161,9 +161,33 @@ class ProductLanding extends React.Component {
                 }
               }
               
+              posts{
+                titulo
+                descripcion
+              }
+              
             }
           }
         
+        }
+        
+        posts{
+          data{
+            id
+            attributes{
+              imagen{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              titulo
+              descripcion_corta
+              fecha
+              texto_enlace
+            }
+          }
         }
       
       }
@@ -211,7 +235,10 @@ class ProductLanding extends React.Component {
                seccion={data.homePage.data.attributes.galeria}
                />
                <LatestProducts />
-               <Blog />
+               <Blog 
+               seccion={data.homePage.data.attributes.posts}
+               posts={data.posts.data}
+               />
                <Feedback />
                <Download />
                <Platform />

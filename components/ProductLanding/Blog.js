@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import ReactHtmlParser from 'react-html-parser';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
 
 const options = {
@@ -40,9 +41,9 @@ class Blog extends React.Component {
             <section className="blog-area ptb-100">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Our Latest News</h2>
+                        <h2>{this.props.seccion.titulo}</h2>
                         <div className="bar"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        {ReactHtmlParser(this.props.seccion.descripcion)}
                     </div>
 
                     <div className="row">
@@ -50,7 +51,40 @@ class Blog extends React.Component {
                             className="blog-slides owl-carousel owl-theme"
                             {...options}
                         >
-                            <div className="col-lg-12 col-md-12">
+
+{
+                        this.props.posts.map(
+                            (item, i, arr) => (
+                                <>
+                                <div className="col-lg-12 col-md-12">
+                                <div className="single-blog-post">
+                                    <Link href="/blog-details">
+                                        <a className="post-image">
+                                            <img src={process.env.NEXT_PUBLIC_URL+item.attributes.imagen.data.attributes.url} alt="blog-image" />
+                                        </a>
+                                    </Link>
+
+                                    <div className="blog-post-content">
+                                        <ul>
+                                            <li><i className="icofont-wall-clock"></i> {item.attributes.fecha}</li>
+                                        </ul>
+                                        <h3>
+                                            <Link href="/blog-details">
+                                                <a>{item.attributes.titulo}</a>
+                                            </Link>
+                                        </h3>
+                                        {ReactHtmlParser(item.attributes.descripcion_corta)}
+                                        <br/>
+                                        <Link href="/blog-details">
+                                            <a className="read-more-btn">{item.attributes.texto_enlace}<i className="icofont-rounded-double-right"></i></a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                                </>
+                            ))}
+
+{/*                             <div className="col-lg-12 col-md-12">
                                 <div className="single-blog-post">
                                     <Link href="/blog-details">
                                         <a className="post-image">
@@ -204,7 +238,8 @@ class Blog extends React.Component {
                                         </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
+
                         </OwlCarousel> : ''}
                     </div>
                 </div>
