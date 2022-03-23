@@ -1,42 +1,40 @@
 import React, { Component } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 class DetailsContent extends Component {
     render() {
+        console.log(this.props.post);
         return (
+            
+
             <section className="blog-details-area ptb-100">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8">
                             <div className="blog-details">
+                                {this.props.post?
+                                <>
                                 <div className="article-img">
-                                    <img src='/images/blog-details.jpg' alt="blog-details" />
-                                    <div className="date">20 <br /> Jan</div>
+                                    <img src={process.env.NEXT_PUBLIC_URL+this.props.post.attributes.imagen.data.attributes.url} alt="blog-details" />
+                                    <div className="date">
+                                        {`
+                                        ${this.props.post.attributes.fecha.substring(8, 10)}
+                                        /
+                                        ${this.props.post.attributes.fecha.substring(5, 7)}
+                                        `}
+                                        <br/>
+                                        {this.props.post.attributes.fecha.substring(0, 4)}
+                                        </div>
                                 </div>
                                 
                                 <div className="article-content">
-                                    <ul className="category">
-                                        <li><a href="/#">IT</a></li>
-                                        <li><a href="/#">Mobile</a></li>
-                                        <li><a href="/#">Marketing</a></li>
-                                        <li><a href="/#">Design</a></li>
-                                        <li><a href="/#">Development</a></li>
-                                    </ul>
+                                    
                                         
-                                    <h3>The Fastest Growing Apps in 2019</h3>
+                                    <h3>{this.props.post.attributes.titulo}</h3>
                                     
-                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In necessitatibus provident facere, reiciendis voluptate dolorem iste consectetur veniam aperiam suscipit ad ipsum et labore a repellendus debitis explicabo quisquam obcaecati....</p>
-                                    
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque eum alias debitis suscipit, sint dignissimos minus quisquam recusandae nostrum quas eligendi odit, fugiat eius rem. Cumque, labore placeat! Velit, vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, iste? Aut ipsam consequuntur non rem tenetur dolore consequatur ducimus a labore excepturi quae nisi, quisquam, maxime voluptates magnam aliquid. Cupiditate!</p>
-                                    
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, iste? Aut ipsam consequuntur non rem tenetur dolore consequatur ducimus a labore excepturi quae nisi, quisquam, maxime voluptates magnam aliquid. Cupiditate!</p>
-                                    
-                                    <blockquote className="blockquote">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, iste? Aut ipsam consequuntur non rem tenetur dolore consequatur ducimus a labore excepturi quae nisi, quisquam, maxime voluptates magnam aliquid. Cupiditate.</p>
-                                    </blockquote>
-                                    
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque eum alias debitis suscipit, sint dignissimos minus quisquam recusandae nostrum quas eligendi odit, fugiat eius rem. Cumque, labore placeat! Velit, vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, iste? Aut ipsam consequuntur non rem tenetur dolore consequatur ducimus a labore excepturi quae nisi, quisquam, maxime voluptates magnam aliquid. Cupiditate!</p>
-                                    
-                                    <div className="share-post">
+                                    {ReactHtmlParser(this.props.post.attributes.cuerpo)}
+
+                                    {/* <div className="share-post">
                                         <ul>
                                             <li><a href="/#"><i className="icofont-facebook"></i></a></li>
                                             <li><a href="/#"><i className="icofont-twitter"></i></a></li>
@@ -44,11 +42,19 @@ class DetailsContent extends Component {
                                             <li><a href="/#"><i className="icofont-instagram"></i></a></li>
                                             <li><a href="/#"><i className="icofont-vimeo"></i></a></li>
                                         </ul>
-                                    </div>
+                                    </div> */}
                                 </div>
+                                </>
+                                :
+                                <>
+                                <h1>Post no encontrado</h1>
+                                </>
+
+                                }
+                                
                             </div>
                             
-                            <div className="post-controls-buttons">
+                            {/* <div className="post-controls-buttons">
                                 <div className="controls-left">
                                     <a href="/#"><i className="icofont-double-left"></i> Prev Post</a>
                                 </div>
@@ -56,9 +62,9 @@ class DetailsContent extends Component {
                                 <div className="controls-right">
                                     <a href="/#">Next Post <i className="icofont-double-right"></i></a>
                                 </div>
-                            </div>
+                            </div> */}
                             
-                            <div className="post-comments">
+                            {/* <div className="post-comments">
                                 <h3>Comments</h3>
                                 <div className="single-comment">
                                     <div className="comment-img">
@@ -107,9 +113,9 @@ class DetailsContent extends Component {
                                         <a href="/#">Reply</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             
-                            <div className="leave-a-reply">
+                            {/* <div className="leave-a-reply">
                                 <h3>Leave a Reply</h3>
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6">
@@ -134,19 +140,19 @@ class DetailsContent extends Component {
                                         <button type="submit" className="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         
                         <div className="col-lg-4">
                             <div className="sidebar-area pl-15">
-                                <div className="widget widget-search">
+                                {/* <div className="widget widget-search">
                                     <form>
                                         <input type="text" className="form-control" placeholder="Search" />
                                         <button type="submit"><i className="icofont-search-2"></i></button>
                                     </form>
-                                </div>
+                                </div> */}
 
-                                <div className="widget widget_post_categories">
+                                {/* <div className="widget widget_post_categories">
                                     <h3 className="widget-title">Post Categories</h3>
                                     <div className="bar"></div>
 
@@ -159,7 +165,7 @@ class DetailsContent extends Component {
                                         <li><a href="/#"><i className="icofont-bubble-right"></i> Design</a></li>
                                         <li><a href="/#"><i className="icofont-bubble-right"></i> Smart TV</a></li>
                                     </ul>
-                                </div>
+                                </div> */}
                                 
                                 <div className="widget widget_recent_posts">
                                     <h3 className="widget-title">Recent Post</h3>
@@ -220,7 +226,7 @@ class DetailsContent extends Component {
                                     </ul>
                                 </div>
 
-                                <div className="widget widget_tag_cloud">
+                                {/* <div className="widget widget_tag_cloud">
                                     <h3 className="widget-title">Popular Tags</h3>
                                     <div className="bar"></div>
 
@@ -233,9 +239,9 @@ class DetailsContent extends Component {
                                         <a href="/#">Smart TV</a>
                                         <a href="/#">Design</a>
                                     </div>
-                                </div>
+                                </div> */}
                                 
-                                <div className="widget widget_text">
+                                {/* <div className="widget widget_text">
                                     <h3 className="widget-title">Instagram</h3>
                                     <div className="bar"></div>
                                     
@@ -276,7 +282,7 @@ class DetailsContent extends Component {
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,7 @@ class ProductLanding extends React.Component {
     
   static async getInitialProps() {
 
-    console.log("Ingresando a getServerSideProps");
+   
     
     const { data } = await client.query({
       query: gql`
@@ -186,6 +186,7 @@ class ProductLanding extends React.Component {
               descripcion_corta
               fecha
               texto_enlace
+              seo
             }
           }
         }
@@ -204,7 +205,6 @@ class ProductLanding extends React.Component {
 
     render() {
       const data = this.props.props.data;
-      const url = client.link.options.uri.replace('/graphql', '')
       console.log(data);
         return (
             <>
