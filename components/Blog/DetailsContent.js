@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
 class DetailsContent extends Component {
+    
     render() {
         console.log(this.props.post);
+
+
+
         return (
             
 
@@ -172,7 +176,28 @@ class DetailsContent extends Component {
                                     <div className="bar"></div>
                                     
                                     <ul>
-                                        <li>
+
+                                    {
+                        this.props.recent_posts.map(
+                            (item, i, arr) => (
+                            <>
+                            <li>
+                                            <div className="recent-post-thumb">
+                                                <a href="/#">
+                                                    <img src={process.env.NEXT_PUBLIC_URL+item.attributes.imagen.data.attributes.url} alt="blog-image" />
+                                                </a>
+                                            </div>
+
+                                            <div className="recent-post-content">
+                                                <h3><a href={"/blog/"+item.attributes.seo}>{item.attributes.titulo}</a></h3>
+                                                <span className="date">{item.attributes.fecha}</span>
+                                            </div>
+                                        </li>
+                            </>
+
+                            ))}
+
+                                        {/* <li>
                                             <div className="recent-post-thumb">
                                                 <a href="/#">
                                                     <img src='/images/blog-img1.jpg' alt="blog-image" />
@@ -222,7 +247,7 @@ class DetailsContent extends Component {
                                                 <h3><a href="/#">CakeMail Review – Design Custom Emails</a></h3>
                                                 <span className="date">06 January 2019</span>
                                             </div>
-                                        </li>
+                                        </li> */}
                                     </ul>
                                 </div>
 

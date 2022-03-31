@@ -75,7 +75,7 @@ class Blog extends React.Component {
                                         </h3>
                                         {ReactHtmlParser(item.attributes.descripcion_corta)}
                                         <br/>
-                                        <Link href="/blog-details">
+                                        <Link href={"/blog/"+item.attributes.seo}>
                                             <a className="read-more-btn">{item.attributes.texto_enlace}<i className="icofont-rounded-double-right"></i></a>
                                         </Link>
                                     </div>

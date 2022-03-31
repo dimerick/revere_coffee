@@ -54,11 +54,39 @@ class Post extends Component{
           }
           `,
         });
-      
+
+        const data2 = await client.query({
+          query: gql`
+          query{
+            posts{
+              data{
+                id
+                attributes{
+                  imagen{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
+                  titulo
+                  descripcion_corta
+                  fecha
+                  texto_enlace
+                  seo
+                }
+              }
+            }
+          }
+          `,
+        });
+        
+        
         
         return {
           props: {
             data: data,
+            data2: data2
           },
        };
       }
@@ -66,7 +94,9 @@ class Post extends Component{
     render() {
         //console.log(this.props.props.data);
         const data = this.props.props.data;
-        console.log(data.posts);
+        console.log(this.props);
+        const data2 = this.props.props.data2;
+        
         // console.log(this.props.router.query.post);
         
 
@@ -83,6 +113,7 @@ class Post extends Component{
 
                 <DetailsContent 
                 post={data.posts.data[0]}
+                recent_posts={data2.data.posts.data}
                 />
                 
                 <Footer />
