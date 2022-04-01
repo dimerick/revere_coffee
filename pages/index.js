@@ -166,6 +166,11 @@ class ProductLanding extends React.Component {
                 descripcion
               }
               
+              productos{
+                titulo
+                descripcion
+              }
+              
             }
           }
         
@@ -188,6 +193,25 @@ class ProductLanding extends React.Component {
               texto_enlace
               seo
             }
+          }
+        }
+        
+        productos{
+          data{
+            attributes{
+              nombre
+              descripcion
+              precio
+              seo
+              imagenes{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+            }
+            
           }
         }
       
@@ -234,7 +258,10 @@ class ProductLanding extends React.Component {
                <Works 
                seccion={data.homePage.data.attributes.galeria}
                />
-               <LatestProducts />
+               <LatestProducts 
+               seccion={data.homePage.data.attributes.productos}
+               productos={data.productos.data}
+               />
                <Blog 
                seccion={data.homePage.data.attributes.posts}
                posts={data.posts.data}

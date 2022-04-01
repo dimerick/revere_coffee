@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import ReactHtmlParser from 'react-html-parser';
 const OwlCarousel = dynamic(import('react-owl-carousel3'));
 
 const options = {
     autoplay: true,
     nav: true,
-    loop:true,
+    loop:false,
     mouseDrag: true,
     autoplayHoverPause: true,
     responsiveClass: true,
@@ -40,9 +41,9 @@ class LatestProducts extends Component {
             <section className="product-area ptb-100">
                 <div className="container">
                     <div className="section-title">
-                        <h2>Our Latest Product</h2>
+                        <h2>{this.props.seccion.titulo}</h2>
                         <div className="bar"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        {ReactHtmlParser(this.props.seccion.descripcion)}
                     </div>
 
                     <div className="row">
@@ -50,7 +51,50 @@ class LatestProducts extends Component {
                             className="product-slides owl-carousel owl-theme"
                             {...options}
                         >
-                            <div className="col-lg-12">
+                            {
+                        this.props.productos.map(
+                            (item, i, arr) => (
+                                <>
+                                <div className="col-lg-12">
+                                <div className="single-product">
+                                    <div className="product-img">
+                                        <img src={process.env.NEXT_PUBLIC_URL+item.attributes.imagenes.data[0].attributes.url} alt="item" />
+
+                                        <Link href="/cart">
+                                            <a className="add-to-cart-btn">Add to Cart <i className="icofont-shopping-cart"></i></a>
+                                        </Link>
+                                    </div>
+
+                                    <div className="product-content">
+                                        <h3>
+                                            <Link href={"/product/"+item.attributes.seo}>
+                                                <a>{item.attributes.nombre}</a>
+                                            </Link>
+                                        </h3>
+
+                                        <div className="row h-100 justify-content-center align-items-center">
+                                            <div className="col-lg-5 col-6">
+                                                <h5>${item.attributes.precio} <span></span></h5>
+                                            </div>
+
+                                            <div className="col-lg-7 col-6">
+                                                <ul>
+                                                    <li><i className="icofont-star"></i></li>
+                                                    <li><i className="icofont-star"></i></li>
+                                                    <li><i className="icofont-star"></i></li>
+                                                    <li><i className="icofont-star"></i></li>
+                                                    <li><i className="icofont-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </>
+
+                            ))}
+
+                            {/* <div className="col-lg-12">
                                 <div className="single-product">
                                     <div className="product-img">
                                         <img src='/images/shop-item1.jpg' alt="item" />
@@ -262,7 +306,7 @@ class LatestProducts extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </OwlCarousel> : ''}
                     </div>
                 </div>

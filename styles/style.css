@@ -7364,4 +7364,13 @@ textarea.form-control {
   width: 30px;
   height: 30px;
 }
+
+.owl-stage-outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=style.css.map */

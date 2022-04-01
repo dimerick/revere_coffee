@@ -58,7 +58,7 @@ class Blog extends React.Component {
                                 <>
                                 <div className="col-lg-12 col-md-12">
                                 <div className="single-blog-post">
-                                    <Link href="/blog-details">
+                                    <Link href={"/blog/"+item.attributes.seo}>
                                         <a className="post-image">
                                             <img src={process.env.NEXT_PUBLIC_URL+item.attributes.imagen.data.attributes.url} alt="blog-image" />
                                         </a>
@@ -69,7 +69,7 @@ class Blog extends React.Component {
                                             <li><i className="icofont-wall-clock"></i> {item.attributes.fecha}</li>
                                         </ul>
                                         <h3>
-                                            <Link href="/blog-details">
+                                            <Link href={"/blog/"+item.attributes.seo}>
                                                 <a>{item.attributes.titulo}</a>
                                             </Link>
                                         </h3>
