@@ -6,6 +6,7 @@ import {
     AccordionItemPanel,
     AccordionItemButton
 } from 'react-accessible-accordion';
+import ReactHtmlParser from 'react-html-parser';
 
 class FaqContent extends Component {
     render() {
@@ -15,73 +16,14 @@ class FaqContent extends Component {
                     <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
-                                How do permissions work in Google Play Instant?
+                                {this.props.seccion.titulo}
                             </AccordionItemButton>
                         </AccordionItemHeading>
                         <AccordionItemPanel>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
+                        {ReactHtmlParser(this.props.seccion.descripcion)}
                         </AccordionItemPanel>
                     </AccordionItem>
-                    <AccordionItem>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                                Is Smart Lock required for instant apps?
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
-                        </AccordionItemPanel>
-                    </AccordionItem>
-                    <AccordionItem>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                            Can I have multiple activities in a single feature?
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
-                        </AccordionItemPanel>
-                    </AccordionItem>
-                    <AccordionItem>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                            Can I share resources between features?
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
-                        </AccordionItemPanel>
-                    </AccordionItem>
-                    <AccordionItem>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                            Is multidex supported for instant apps?
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
-                        </AccordionItemPanel>
-                    </AccordionItem>
-                    <AccordionItem>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                            Can I share resources between features?
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
-                        </AccordionItemPanel>
-                    </AccordionItem>
-                    <AccordionItem>
-                        <AccordionItemHeading>
-                            <AccordionItemButton>
-                                Is Smart Lock required for instant apps?
-                            </AccordionItemButton>
-                        </AccordionItemHeading>
-                        <AccordionItemPanel>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. incididunt ut labore et dolore magna aliqua.</p>
-                        </AccordionItemPanel>
-                    </AccordionItem>
+                    
                 </Accordion>
             </div>
         );

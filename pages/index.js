@@ -291,7 +291,9 @@ class ProductLanding extends React.Component {
                <Feedback />
                <Download />
                <Platform />
-               <Footer />
+               <Footer 
+               logo={data.homePage.data.attributes.logo}
+               />
             </>
         );
     }

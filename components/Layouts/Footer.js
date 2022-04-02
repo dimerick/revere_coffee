@@ -11,7 +11,7 @@ class Footer extends Component {
                             <div className="single-footer-widget">
                                 <Link href="/saas">
                                     <a className="logo">
-                                        <img src='/images/logo2.png' alt="logo2" />
+                                        <img src={process.env.NEXT_PUBLIC_URL+this.props.logo.imagen.data.attributes.url} alt="logo2" />
                                     </a>
                                 </Link>
                                 <p>Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual.</p>
@@ -152,7 +152,7 @@ class Footer extends Component {
                             <div className="col-lg-6 col-md-6">
                                 <ul>
                                     <li>
-                                        <Link href="/#">
+                                        <Link href="/terms-conditions">
                                             <a>Terms & Conditions</a>
                                         </Link>
                                     </li>
