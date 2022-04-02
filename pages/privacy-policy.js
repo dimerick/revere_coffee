@@ -29,7 +29,7 @@ class Faq extends Component {
                         }
                       }
                     }
-                    preguntas_frecuentes{
+                    politica_privacidad{
                       titulo
                       descripcion
                     }
@@ -64,7 +64,7 @@ class Faq extends Component {
 			        <div className="container">
 
                         <FaqContent 
-                        seccion={data.homePage.data.attributes.preguntas_frecuentes}
+                        seccion={data.homePage.data.attributes.politica_privacidad}
                         /> 
 
                         {/* <AskForm /> */}
