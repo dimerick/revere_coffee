@@ -41,11 +41,11 @@ class DetailsBody extends Component {
 
                                     {ReactHtmlParser(this.props.producto.attributes.descripcion)}
 
-                                    <ul className="product-categories">
+                                   {/*  <ul className="product-categories">
                                         <li>Categories:</li>
                                         <li><a href="#">Books</a>,</li>
                                         <li><a href="#">Art</a></li>
-                                    </ul>
+                                    </ul> */}
 
                                     <form onSubmit={this.onFormSubmit}>
                                         <input 

@@ -13,6 +13,7 @@ import Blog from '../components/ProductLanding/Blog';
 import Feedback from '../components/ProductLanding/Feedback';
 import Download from '../components/ProductLanding/Download';
 import Platform from '../components/ProductLanding/Platform';
+import DetailsContent from '../components/Project/DetailsContent';
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import AboutContent from '../components/About/AboutContent';
@@ -171,9 +172,28 @@ class ProductLanding extends React.Component {
                 descripcion
               }
               
-            }
+              experiencias{
+                titulo
+                descripcion
+                canal
+                url_video
+                imagen{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+                imagenes{
+                  data{
+                    attributes{
+                      url
+                    }
+                  }
+                }
+              }
+            } 
           }
-        
         }
         
         posts{
@@ -214,7 +234,6 @@ class ProductLanding extends React.Component {
             
           }
         }
-      
       }
       `,
     });
@@ -265,6 +284,9 @@ class ProductLanding extends React.Component {
                <Blog 
                seccion={data.homePage.data.attributes.posts}
                posts={data.posts.data}
+               />
+               <DetailsContent 
+               seccion={data.homePage.data.attributes.experiencias}
                />
                <Feedback />
                <Download />
