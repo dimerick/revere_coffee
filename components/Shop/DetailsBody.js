@@ -4,6 +4,7 @@ import { addQuantityWithNumber } from '../../store/actions/cartActions';
 import ImageSlide from './ImageSlide';
 import RelatedProducts from './RelatedProducts';
 import Description from './Description';
+import ReactHtmlParser from 'react-html-parser';
 
 class DetailsBody extends Component {
 
@@ -29,14 +30,16 @@ class DetailsBody extends Component {
                 <div className="container">
                     <div className="shop-details">
                         <div className="row h-100 justify-content-center align-items-center">
-                            <ImageSlide />
+                            <ImageSlide 
+                            imagenes={this.props.producto.attributes.imagenes.data}
+                            />
 
                             <div className="col-lg-7 col-md-12">
                                 <div className="product-entry-summary">
-                                    <h3>Gold Buyer's Survival Manual</h3>
-                                    <h4><span>$44.00</span> $30.00</h4>
+                                    <h3>{this.props.producto.attributes.nombre}</h3>
+                                    <h4><span></span> ${this.props.producto.attributes.precio}</h4>
 
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    {ReactHtmlParser(this.props.producto.attributes.descripcion)}
 
                                     <ul className="product-categories">
                                         <li>Categories:</li>
@@ -64,22 +67,24 @@ class DetailsBody extends Component {
                                         </button>
                                     </form>
 
-                                    <ul className="share-social">
+                                    {/* <ul className="share-social">
                                         <li>Share:</li>
                                         <li><a href="#" target="_blank"><i className="icofont-facebook"></i></a></li>
                                         <li><a href="#" target="_blank"><i className="icofont-twitter"></i></a></li>
                                         <li><a href="#" target="_blank"><i className="icofont-linkedin"></i></a></li>
                                         <li><a href="#" target="_blank"><i className="icofont-instagram"></i></a></li>
-                                    </ul>
+                                    </ul> */}
                                 </div>
                             </div>
                         </div>
 
-                        <Description />
+                        {/* <Description /> */}
                     </div>
                 </div>
                 
-                <RelatedProducts />
+                <RelatedProducts 
+                productos={this.props.recent_products}
+                />
             </section>
         );
     }

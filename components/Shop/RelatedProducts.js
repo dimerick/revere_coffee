@@ -12,7 +12,50 @@ class RelatedProducts extends Component {
                     </div>
 
                     <div className="row">
-                        <div className="col-lg-4 col-md-6">
+
+                    {
+                        this.props.productos.map(
+                            (item, i, arr) => (
+                                <>
+                                <div className="col-lg-4 col-md-6">
+                            <div className="single-product">
+                                <div className="product-img">
+                                    <img src={process.env.NEXT_PUBLIC_URL+item.attributes.imagenes.data[0].attributes.url} alt="item" />
+
+                                    <Link href="/cart">
+                                        <a className="add-to-cart-btn">Add to Cart <i className="icofont-shopping-cart"></i></a>
+                                    </Link>
+                                </div>
+
+                                <div className="product-content">
+                                    <h3>
+                                        <Link href={"/product/"+item.attributes.seo}>
+                                            <a>{item.attributes.nombre}</a>
+                                        </Link>
+                                    </h3>
+
+                                    <div className="row h-100 justify-content-center align-items-center">
+                                        <div className="col-lg-5">
+                                            <h5>${item.attributes.precio} <span></span></h5>
+                                        </div>
+
+                                        <div className="col-lg-7">
+                                            <ul>
+                                                <li><i className="icofont-star"></i></li>
+                                                <li><i className="icofont-star"></i></li>
+                                                <li><i className="icofont-star"></i></li>
+                                                <li><i className="icofont-star"></i></li>
+                                                <li><i className="icofont-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                </>
+                            ))}
+
+                        {/* <div className="col-lg-4 col-md-6">
                             <div className="single-product">
                                 <div className="product-img">
                                     <img src='/images/shop-item1.jpg' alt="item" />
@@ -118,7 +161,8 @@ class RelatedProducts extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
+
                     </div>
                 </div>
             </div>

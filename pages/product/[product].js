@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/Layouts/Navbar';
 import Footer from '../../components/Layouts/Footer';
-import BannerTwo from '../../components/Blog/BannerTwo';
+import BannerTwo from '../../components/Shop/BannerTwo';
+import DetailsBody from '../../components/Shop/DetailsBody';
+
 import client from "../../apollo-client";
 import { gql } from "@apollo/client";
 import { withRouter } from 'next/router';
-import DetailsBody from '../../components/Shop/DetailsBody';
+
 
 
 
@@ -64,6 +66,13 @@ class Product extends Component{
                   descripcion
                   precio
                   seo
+                  imagenes{
+                    data{
+                      attributes{
+                        url
+                      }
+                    }
+                  }
                   
                 }
               }
@@ -86,7 +95,7 @@ class Product extends Component{
         //console.log(this.props.props.data);
         const data = this.props.props.data;
         console.log(this.props);
-        //const data2 = this.props.props.data2;
+        const data2 = this.props.props.data2;
         
         // console.log(this.props.router.query.post);
         
@@ -100,7 +109,10 @@ class Product extends Component{
 
                 <BannerTwo />
 
-                <DetailsBody />
+                <DetailsBody 
+                producto={data.productos.data[0]}
+                recent_products={data2.data.productos.data}
+                />
                 
                 <Footer />
             </>

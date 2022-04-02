@@ -33,23 +33,37 @@ class ImageSlide extends Component {
                     className="product-img-slides owl-carousel owl-theme"
                     {...options}
                 >
-                    <div className="product-img">
+                    
+                    {
+                        this.props.imagenes.map(
+                            (item, i, arr) => (
+                                <>
+                                <div className="product-img">
                         <a href="#">
-                            <img src='/images/shop-item1.jpg' alt="product-img" />
+                            <img src={process.env.NEXT_PUBLIC_URL+item.attributes.url} alt="product-img" />
+                        </a>
+                    </div>
+                                </>
+
+                            ))}
+
+                   {/*  <div className="product-img">
+                        <a href="#">
+                            <img src='http://31.220.52.62:1350/uploads/producto1_2663905f5c.jpg' alt="product-img" />
                         </a>
                     </div>
 
                     <div className="product-img">
                         <a href="#">
-                            <img src='/images/shop-item2.jpg' alt="product-img" />
+                            <img src='http://31.220.52.62:1350/uploads/producto1_2663905f5c.jpg' alt="product-img" />
                         </a>
                     </div>
 
                     <div className="product-img">
                         <a href="#">
-                            <img src='/images/shop-item3.jpg' alt="product-img" />
+                            <img src='http://31.220.52.62:1350/uploads/producto1_2663905f5c.jpg' alt="product-img" />
                         </a>
-                    </div>
+                    </div> */}
                 </OwlCarousel> : ''}
             </div>
         );
