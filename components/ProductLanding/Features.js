@@ -7,7 +7,7 @@ class Features extends Component {
 
     render() {
         return (
-            <section className="features-area product-features ptb-100">
+            <section id="brew-bags-revere" className="features-area product-features ptb-100">
                 <div className="container">
                     <div className="row h-100 justify-content-center align-items-center">
                         <div className="col-lg-5 col-md-12">

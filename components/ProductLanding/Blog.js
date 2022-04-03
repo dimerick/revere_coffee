@@ -38,7 +38,9 @@ class Blog extends React.Component {
     }
     render() {
         return (
-            <section className="blog-area ptb-100">
+            <>
+            <div id="about-revere" className='ptb-50'></div>
+            <section className="blog-area ptb-50">
                 <div className="container">
                     <div className="section-title">
                         <h2>{this.props.seccion.titulo}</h2>
@@ -58,7 +60,7 @@ class Blog extends React.Component {
                                 <>
                                 <div className="col-lg-12 col-md-12">
                                 <div className="single-blog-post">
-                                    <Link href={"/blog/"+item.attributes.seo}>
+                                    <Link href={"/blog/"+item.attributes.seo+"#post"}>
                                         <a className="post-image">
                                             <img src={process.env.NEXT_PUBLIC_URL+item.attributes.imagen.data.attributes.url} alt="blog-image" />
                                         </a>
@@ -69,7 +71,7 @@ class Blog extends React.Component {
                                             <li><i className="icofont-wall-clock"></i> {item.attributes.fecha}</li>
                                         </ul>
                                         <h3>
-                                            <Link href={"/blog/"+item.attributes.seo}>
+                                            <Link href={"/blog/"+item.attributes.seo+"#post"}>
                                                 <a>{item.attributes.titulo}</a>
                                             </Link>
                                         </h3>
@@ -244,6 +246,7 @@ class Blog extends React.Component {
                     </div>
                 </div>
             </section>
+            </>
         );
     }
 }

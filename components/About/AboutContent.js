@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 class AboutContent extends Component {
     render() {
         return (
-            <section className="about-area ptb-100">
+            <section id="founder" className="about-area ptb-100">
                 <div className="container">
                     <div className="row h-100 justify-content-center align-items-center">
                         <div className="col-lg-6 col-md-12">

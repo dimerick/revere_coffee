@@ -11,7 +11,10 @@ import ReactHtmlParser from 'react-html-parser';
 class FaqContent extends Component {
     render() {
         return (
+            <>
+            <div id="main" className="ptb-50"></div>
             <div className="faq-accordion">
+                
                 <Accordion>
                     <AccordionItem>
                         <AccordionItemHeading>
@@ -25,7 +28,10 @@ class FaqContent extends Component {
                     </AccordionItem>
                     
                 </Accordion>
+                
+                
             </div>
+            </>
         );
     }
 }

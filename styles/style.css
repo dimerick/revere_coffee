@@ -7369,4 +7369,9 @@ footer .logo img {
   -webkit-filter: invert(1);
           filter: invert(1);
 }
+
+.ptb-50 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 /*# sourceMappingURL=style.css.map */

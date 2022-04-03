@@ -42,7 +42,7 @@ class DetailsContent extends Component {
                     onClose={() => this.setState({isOpen: false})} 
                 />
                 
-                <section className="project-details-area ptb-100">
+                <section id="experiences" className="project-details-area ptb-100">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6 col-md-6">

@@ -22,7 +22,7 @@ const Works = (props) => {
     
             
     return (
-        <section className="gallery-area ptb-100 pb-0">
+        <section id="gallery" className="gallery-area ptb-100 pb-0">
             <div className="container">
                 <div className="section-title">
                     <h2>{props.seccion.titulo}</h2>

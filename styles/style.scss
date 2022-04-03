@@ -7013,3 +7013,10 @@ textarea.form-control {
   footer .logo img{
     filter: invert(1);
   }
+
+  .ptb-50 {
+    padding: {
+        top: 50px;
+        bottom: 50px;
+    }
+}

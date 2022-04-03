@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 class VirtualReality extends Component {
     render() {
         return (
-            <section className="next-generation-virtual-reality ptb-100">
+            <section id="diez-razones" className="next-generation-virtual-reality ptb-100">
                 <div className="container">
                     <div className="section-title">
                         

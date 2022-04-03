@@ -4,7 +4,7 @@ import ReactHtmlParser from 'react-html-parser';
 class NewFeatures extends Component {
     render() {
         return (
-            <section className="new-features-area ptb-100">
+            <section id="sostenibilidad" className="new-features-area ptb-100">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-12">

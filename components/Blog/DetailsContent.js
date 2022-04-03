@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import Link from 'next/link';
 
 class DetailsContent extends Component {
     
@@ -11,7 +12,7 @@ class DetailsContent extends Component {
         return (
             
 
-            <section className="blog-details-area ptb-100">
+            <section id="post" className="blog-details-area ptb-100">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8">
@@ -189,7 +190,12 @@ class DetailsContent extends Component {
                                             </div>
 
                                             <div className="recent-post-content">
-                                                <h3><a href={"/blog/"+item.attributes.seo}>{item.attributes.titulo}</a></h3>
+                                                <h3>
+                                                <Link href={"/blog/"+item.attributes.seo+"#post"}>
+                                                <a>{item.attributes.titulo}</a>
+                                            </Link>
+                                                    
+                                                    </h3>
                                                 <span className="date">{item.attributes.fecha}</span>
                                             </div>
                                         </li>

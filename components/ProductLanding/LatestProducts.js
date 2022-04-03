@@ -38,7 +38,7 @@ class LatestProducts extends Component {
     }
     render() {
         return (
-            <section className="product-area ptb-100">
+            <section id="products" className="product-area ptb-100">
                 <div className="container">
                     <div className="section-title">
                         <h2>{this.props.seccion.titulo}</h2>

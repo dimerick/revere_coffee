@@ -116,7 +116,9 @@ class Post extends Component{
                 recent_posts={data2.data.posts.data}
                 />
                 
-                <Footer />
+                <Footer 
+                logo={data.homePage.data.attributes.logo}
+                />
             </>
         );
     }

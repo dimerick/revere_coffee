@@ -19,7 +19,7 @@ class Banner extends Component {
     render() {
         return (
             <>
-                <div className="main-banner product-home">
+                <div id="banner" className="main-banner product-home">
                     <div className="d-table">
                         <div className="d-table-cell">
                             <div className="container">

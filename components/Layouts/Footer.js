@@ -115,17 +115,17 @@ class Footer extends Component {
 
                                 <ul className="list">
                                     <li>
-                                        <Link href="/about">
+                                        <Link href="/#about-revere">
                                             <a>About</a>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/contact">
+                                        <Link href="/contact#main">
                                             <a>Contact</a>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/faq">
+                                        <Link href="/faq#main">
                                             <a>FAQ</a>
                                         </Link>
                                     </li>

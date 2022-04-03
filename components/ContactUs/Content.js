@@ -4,6 +4,8 @@ import Link from 'next/link';
 class Content extends Component {
     render() {
         return (
+            <>
+            <div id="main" className="ptb-50"></div>
             <section className="contact-info-area ptb-100">
                 <div className="container">
                     <div className="row">
@@ -53,6 +55,7 @@ class Content extends Component {
                     </div>
                 </div>
             </section>
+            </>
         );
     }
 }
