@@ -272,8 +272,8 @@ class ProductLanding extends React.Component {
                <AboutContent 
                seccion={data.homePage.data.attributes.founder}
                />
-               <Overview />
-               <WorkProcess />
+               {/* <Overview />
+               <WorkProcess /> */}
                <Works 
                seccion={data.homePage.data.attributes.galeria}
                />
@@ -288,9 +288,9 @@ class ProductLanding extends React.Component {
                <DetailsContent 
                seccion={data.homePage.data.attributes.experiencias}
                />
-               <Feedback />
+               {/* <Feedback />
                <Download />
-               <Platform />
+               <Platform /> */}
                <Footer 
                logo={data.homePage.data.attributes.logo}
                />

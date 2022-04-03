@@ -7364,4 +7364,9 @@ textarea.form-control {
   width: 30px;
   height: 30px;
 }
+
+footer .logo img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
 /*# sourceMappingURL=style.css.map */
