@@ -32,6 +32,9 @@ class Product extends Component{
                       }
                     }
                   }
+                  footer{
+                    descripcion
+                  }
                 }
               }
             }
@@ -114,7 +117,10 @@ class Product extends Component{
                 recent_products={data2.data.productos.data}
                 />
                 
-                <Footer />
+                <Footer 
+                logo={data.homePage.data.attributes.logo}
+                seccion={data.homePage.data.attributes.footer}
+                />
             </>
         );
     }

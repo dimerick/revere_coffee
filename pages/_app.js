@@ -25,11 +25,11 @@ export default withRedux(initStore)(
             return (
                 <>
                     <Head>
-                        <title>Mojosa - React Next Landing Page Templates</title>
+                        <title>Revere Coffee</title>
                         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                        <meta name="description" content="Mojosa - React Next Landing Page Templates" />
-                        <meta name="og:title" property="og:title" content="Mojosa - React Next Landing Page Templates"></meta>
-                        <meta name="twitter:card" content="Mojosa - React Next Landing Page Templates"></meta>
+                        <meta name="description" content="Revere Coffee" />
+                        <meta name="og:title" property="og:title" content="Revere Coffee"></meta>
+                        <meta name="twitter:card" content="Revere Coffee"></meta>
                         <link rel="canonical" href="https://mojosa-react.envytheme.com/"></link>
                     </Head>
  

@@ -30,6 +30,9 @@ class Post extends Component{
                       }
                     }
                   }
+                  footer{
+                    descripcion
+                  }
                 }
               }
             }
@@ -118,6 +121,7 @@ class Post extends Component{
                 
                 <Footer 
                 logo={data.homePage.data.attributes.logo}
+                seccion={data.homePage.data.attributes.footer}
                 />
             </>
         );

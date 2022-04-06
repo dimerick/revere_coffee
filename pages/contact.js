@@ -29,6 +29,9 @@ class Contact extends Component {
                         }
                       }
                     }
+                    footer{
+                      descripcion
+                    }
                   }
                 }
               }
@@ -64,6 +67,7 @@ class Contact extends Component {
                 
                 <Footer 
                 logo={data.homePage.data.attributes.logo}
+                seccion={data.homePage.data.attributes.footer}
                 />
             </>
         );

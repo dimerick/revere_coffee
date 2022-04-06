@@ -41,6 +41,9 @@ class ProductLanding extends React.Component {
                   }
                 }
               }
+              footer{
+                descripcion
+              }
               banner{
                 titulo
                 descripcion
@@ -293,6 +296,7 @@ class ProductLanding extends React.Component {
                <Platform /> */}
                <Footer 
                logo={data.homePage.data.attributes.logo}
+               seccion={data.homePage.data.attributes.footer}
                />
             </>
         );

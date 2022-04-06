@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import ReactHtmlParser from 'react-html-parser';
 
 class Footer extends Component {
+
+    
+
     render() {
+        const today = new Date();
+        const year = today.getFullYear();
         return (
             <footer className="footer-area ptb-100 pb-0 bg-image">
                 <div className="container">
@@ -14,7 +20,7 @@ class Footer extends Component {
                                         <img src={process.env.NEXT_PUBLIC_URL+this.props.logo.imagen.data.attributes.url} alt="logo2" />
                                     </a>
                                 </Link>
-                                <p>Plan ahead by day, week, or month, and see project status at a glance. Search and filter to focus in on anything form a single project individual.</p>
+                                {ReactHtmlParser(this.props.seccion.descripcion)}
 
                                 <ul className="social-list">
                                     <li>
@@ -37,35 +43,11 @@ class Footer extends Component {
 
                                 <ul className="list">
                                     <li>
-                                        <Link href="/about">
+                                        <Link href="/#about-revere">
                                             <a>About</a>
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link href="/about">
-                                            <a>Carrers</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/about">
-                                            <a>Awards</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#">
-                                            <a>User Program</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#">
-                                            <a href="/#">Locations</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/login">
-                                            <a>Login</a>
-                                        </Link>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -76,35 +58,11 @@ class Footer extends Component {
 
                                 <ul className="list">
                                     <li>
-                                        <Link href="#">
-                                            <a>Integrations</a>
+                                        <Link href="/#products">
+                                            <a>Products</a>
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link href="#">
-                                            <a>API</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/pricing-one">
-                                            <a>Pricing</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/#">
-                                            <a>Documentation</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/signup">
-                                            <a>Sign Up</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="#">
-                                            <a>Release Notes</a>
-                                        </Link>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -114,11 +72,7 @@ class Footer extends Component {
                                 <h3>Support</h3>
 
                                 <ul className="list">
-                                    <li>
-                                        <Link href="/#about-revere">
-                                            <a>About</a>
-                                        </Link>
-                                    </li>
+                                    
                                     <li>
                                         <Link href="/contact#main">
                                             <a>Contact</a>
@@ -129,11 +83,7 @@ class Footer extends Component {
                                             <a>FAQ</a>
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link href="#">
-                                            <a>Press</a>
-                                        </Link>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -144,18 +94,18 @@ class Footer extends Component {
                     <div className="container">
                         <div className="row h-100 justify-content-center align-items-center">
                             <div className="col-lg-6 col-md-6">
-                                <p>Copyright &copy; 2021 Mojosa. All rights reserved</p>
+                                <p>Copyright &copy; {year} Revere. All rights reserved</p>
                             </div>
                             
                             <div className="col-lg-6 col-md-6">
                                 <ul>
                                     <li>
-                                        <Link href="/terms-conditions">
+                                        <Link href="/terms-conditions#main">
                                             <a>Terms & Conditions</a>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/privacy-policy">
+                                        <Link href="/privacy-policy#main">
                                             <a>Privacy Policy</a>
                                         </Link>
                                     </li>
