@@ -120,7 +120,7 @@ class Navbar extends React.Component {
                                                 
                                                 <li>
                                                     <Link activeClassName="active" href="/#diez-razones">
-                                                        <a>Diez Razones para Elegirnos</a>
+                                                        <a>Ten reasons to choose us</a>
                                                     </Link>
                                                 </li>
 
