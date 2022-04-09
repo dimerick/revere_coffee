@@ -187,7 +187,7 @@ class Navbar extends React.Component {
                                             </Link>
                                         </li>
 
-                                        <li className="header-search-box">
+                                        {<li className="header-search-box">
                                             <Link activeClassName="active" href="/#">
                                                 <a 
                                                     onClick={e => {e.preventDefault();this.handleSearchForm();}}
@@ -196,7 +196,7 @@ class Navbar extends React.Component {
                                                     <i className="icofont-search-2"></i>
                                                 </a>
                                             </Link>
-                                        </li>
+                                        </li>}
                                         
                                         <li onClick={this.handleDrawer}>
                                             <div className="side-menu">
@@ -212,8 +212,17 @@ class Navbar extends React.Component {
                     </div>
                 </header>
 
-                {this.state.drawer ? <SideDrawer onClick={this.handleDrawer} /> : ''}
-                {this.state.searchForm ? <SearchForm onClick={this.handleSearchForm} /> : ''}
+                {this.state.drawer ? 
+                <SideDrawer 
+                onClick={this.handleDrawer} 
+                contacto={this.props.contacto}
+                logo={this.props.logo}
+                
+                /> : ''}
+                {this.state.searchForm ? 
+                // <SearchForm onClick={this.handleSearchForm} /> 
+                ''
+                : ''}
             </>
         );
     }

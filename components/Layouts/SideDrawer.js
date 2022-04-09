@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import ReactHtmlParser from 'react-html-parser';
 
 class SideDrawer extends Component {
 
@@ -36,14 +37,14 @@ class SideDrawer extends Component {
                                 <h2 className="modal-title" id="myModalLabel2">
                                     <Link href="/">
                                         <a>
-                                            <img src='/images/logo.png' alt="logo" />
+                                            <img src={process.env.NEXT_PUBLIC_URL+this.props.logo.imagen.data.attributes.url} alt="logo" />
                                         </a>
                                     </Link>
                                 </h2>
                             </div>
 
                             <div className="modal-body">
-                                <div className="sidebar-modal-widget">
+                                {/* <div className="sidebar-modal-widget">
                                     <h3 className="title">Additional Links</h3>
 
                                     <ul>
@@ -68,7 +69,7 @@ class SideDrawer extends Component {
                                             </Link>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                                 
                                 <div className="sidebar-modal-widget">
                                     <h3 className="title">Contact Info</h3>
@@ -77,17 +78,17 @@ class SideDrawer extends Component {
                                         <li>
                                             <i className="icofont-google-map"></i>
                                             Address
-                                            <span>1660 Travis Street Miramar, FL 33025, California</span>
+                                            {ReactHtmlParser(this.props.contacto.direccion)}
                                         </li>
                                         <li>
                                             <i className="icofont-email"></i>
                                             Email
-                                            <span>admin@mojosa.com</span>
+                                            {ReactHtmlParser(this.props.contacto.email)}
                                         </li>
                                         <li>
                                             <i className="icofont-phone"></i>
                                             Phone
-                                            <span>+123 456 7890</span>
+                                            {ReactHtmlParser(this.props.contacto.telefono)}
                                         </li>
                                     </ul>
                                 </div>
@@ -97,25 +98,21 @@ class SideDrawer extends Component {
 
                                     <ul className="social-list">
                                         <li>
-                                            <Link href="/#">
+                                            <Link href={this.props.contacto.facebook}>
                                                 <a><i className="icofont-facebook"></i></a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/#">
-                                                <a><i className="icofont-twitter"></i></a>
+                                            <Link href={this.props.contacto.youtube}>
+                                                <a><i className="icofont-youtube"></i></a>
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/#">
+                                            <Link href={this.props.contacto.instagram}>
                                                 <a><i className="icofont-instagram"></i></a>
                                             </Link>
                                         </li>
-                                        <li>
-                                            <Link href="/#">
-                                                <a><i className="icofont-linkedin"></i></a>
-                                            </Link>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>

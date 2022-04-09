@@ -32,6 +32,14 @@ class Contact extends Component {
                     footer{
                       descripcion
                     }
+                    contacto{
+                      direccion
+                      email
+                      telefono
+                      facebook
+                      instagram
+                      youtube
+                    }
                   }
                 }
               }
@@ -61,13 +69,16 @@ class Contact extends Component {
 
                 <Banner />
 
-                <Content />
+                <Content 
+                contacto={data.homePage.data.attributes.contacto}
+                />
 
                 {/* <Form /> */}
                 
                 <Footer 
                 logo={data.homePage.data.attributes.logo}
                 seccion={data.homePage.data.attributes.footer}
+                contacto={data.homePage.data.attributes.contacto}
                 />
             </>
         );

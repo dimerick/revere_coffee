@@ -24,14 +24,14 @@ class Footer extends Component {
 
                                 <ul className="social-list">
                                     <li>
-                                        <a href="https://www.facebook.com/profile.php?id=100079191168876" target="_blank"><i className="icofont-facebook"></i></a>
+                                        <a href={this.props.contacto.facebook} target="_blank"><i className="icofont-facebook"></i></a>
                                     </li>
                                     
                                     <li>
-                                        <a href="https://instagram.com/revere.coffee?utm_medium=copy_link" target="_blank"><i className="icofont-instagram"></i></a>
+                                        <a href={this.props.contacto.instagram} target="_blank"><i className="icofont-instagram"></i></a>
                                     </li>
                                     <li>
-                                        <a href="https://youtube.com/channel/UCvT4jHUU2usohihh5PfKf-A" target="_blank"><i className="icofont-youtube"></i></a>
+                                        <a href={this.props.contacto.youtube} target="_blank"><i className="icofont-youtube"></i></a>
                                     </li>
                                 </ul>
                             </div>

@@ -33,6 +33,14 @@ class Post extends Component{
                   footer{
                     descripcion
                   }
+                  contacto{
+                    direccion
+                    email
+                    telefono
+                    facebook
+                    instagram
+                    youtube
+                  }
                 }
               }
             }
@@ -108,6 +116,7 @@ class Post extends Component{
                 <Navbar 
                 
                 logo={data.homePage.data.attributes.logo}
+                contacto={data.homePage.data.attributes.contacto}
                 />
 
                 
@@ -122,6 +131,7 @@ class Post extends Component{
                 <Footer 
                 logo={data.homePage.data.attributes.logo}
                 seccion={data.homePage.data.attributes.footer}
+                contacto={data.homePage.data.attributes.contacto}
                 />
             </>
         );

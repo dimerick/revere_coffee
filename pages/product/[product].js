@@ -35,6 +35,14 @@ class Product extends Component{
                   footer{
                     descripcion
                   }
+                  contacto{
+                    direccion
+                    email
+                    telefono
+                    facebook
+                    instagram
+                    youtube
+                  }
                 }
               }
             }
@@ -108,6 +116,7 @@ class Product extends Component{
 
                 <Navbar 
                 logo={data.homePage.data.attributes.logo}
+                contacto={data.homePage.data.attributes.contacto}
                 />
 
                 <BannerTwo />
@@ -120,6 +129,7 @@ class Product extends Component{
                 <Footer 
                 logo={data.homePage.data.attributes.logo}
                 seccion={data.homePage.data.attributes.footer}
+                contacto={data.homePage.data.attributes.contacto}
                 />
             </>
         );
