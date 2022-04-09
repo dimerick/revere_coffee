@@ -18,9 +18,9 @@ class Features extends Component {
                                     {ReactHtmlParser(this.props.seccion.descripcion)}
                                 </div>
 
-                                <Link href="/services">
+                                {/* <Link href="/services">
                                     <a className="btn btn-primary">Our Services</a>
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
 

@@ -33,6 +33,9 @@ class Footer extends Component {
                                     <li>
                                         <a href={this.props.contacto.youtube} target="_blank"><i className="icofont-youtube"></i></a>
                                     </li>
+                                    <li>
+                                        <a href={"https://wa.me/"+this.props.contacto.numero_whatsapp+"/?text="+this.props.contacto.mensaje_whatsapp} target="_blank"><i className="icofont-whatsapp"></i></a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

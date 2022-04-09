@@ -114,7 +114,7 @@ class Navbar extends React.Component {
 
                                                 <li>
                                                     <Link activeClassName="active" href="/#sostenibilidad">
-                                                        <a>Contribuimos a</a>
+                                                        <a>We contribute to</a>
                                                     </Link>
                                                 </li>
                                                 
@@ -178,7 +178,7 @@ class Navbar extends React.Component {
                                 <div className="ms-auto others-option">
                                     <ul className="navbar-nav">
                                         <li className="nav-item cart-wrapper">
-                                            <Link activeClassName="active" href="/cart">
+                                            <Link activeClassName="active" href="/">
                                                 <a>
                                                     <i className="icofont-shopping-cart cart-icon"></i>
 

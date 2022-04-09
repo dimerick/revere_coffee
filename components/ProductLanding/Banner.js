@@ -60,7 +60,7 @@ class Banner extends Component {
                         </div>
                     </div>
 
-                    <div className="creative-shape"><img src='/images/bg4.png' alt="bg" /></div>
+                    {/* <div className="creative-shape"><img src='/images/bg4.png' alt="bg" /></div> */}
                     <div className="bg-gray shape-1"></div>
                     <div className="shape1"><img src='/images/shape1.png' alt="img" /></div>
                     <div className="shape2"><img src='/images/shape2.png' alt="img" /></div>

@@ -39,6 +39,8 @@ class Contact extends Component {
                       facebook
                       instagram
                       youtube
+                      numero_whatsapp
+                      mensaje_whatsapp
                     }
                   }
                 }
@@ -65,6 +67,7 @@ class Contact extends Component {
             <>
                 <Navbar 
                 logo={data.homePage.data.attributes.logo}
+                contacto={data.homePage.data.attributes.contacto}
                 />
 
                 <Banner />

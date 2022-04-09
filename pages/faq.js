@@ -39,6 +39,8 @@ class Faq extends Component {
                       facebook
                       instagram
                       youtube
+                      numero_whatsapp
+                      mensaje_whatsapp
                     }
                     preguntas_frecuentes{
                       titulo
@@ -67,6 +69,7 @@ class Faq extends Component {
             <>
                 <Navbar 
                 logo={data.homePage.data.attributes.logo}
+                contacto={data.homePage.data.attributes.contacto}
                 />
                 
                 <Banner />

@@ -90,6 +90,7 @@ class SideDrawer extends Component {
                                             Phone
                                             {ReactHtmlParser(this.props.contacto.telefono)}
                                         </li>
+                                        
                                     </ul>
                                 </div>
 
@@ -99,17 +100,23 @@ class SideDrawer extends Component {
                                     <ul className="social-list">
                                         <li>
                                             <Link href={this.props.contacto.facebook}>
-                                                <a><i className="icofont-facebook"></i></a>
+                                                <a target="_blank"><i className="icofont-facebook"></i></a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href={this.props.contacto.youtube}>
-                                                <a><i className="icofont-youtube"></i></a>
+                                                <a target="_blank"><i className="icofont-youtube"></i></a>
                                             </Link>
                                         </li>
                                         <li>
                                             <Link href={this.props.contacto.instagram}>
-                                                <a><i className="icofont-instagram"></i></a>
+                                                <a target="_blank"><i className="icofont-instagram"></i></a>
+                                            </Link>
+                                        </li>
+
+                                        <li>
+                                            <Link href={"https://wa.me/"+this.props.contacto.numero_whatsapp+"/?text="+this.props.contacto.mensaje_whatsapp}>
+                                                <a target="_blank"><i className="icofont-whatsapp"></i></a>
                                             </Link>
                                         </li>
                                         

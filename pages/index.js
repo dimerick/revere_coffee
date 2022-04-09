@@ -51,6 +51,8 @@ class ProductLanding extends React.Component {
                 facebook
                 instagram
                 youtube
+                numero_whatsapp
+                mensaje_whatsapp
               }
               banner{
                 titulo

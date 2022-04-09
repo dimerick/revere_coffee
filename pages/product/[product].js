@@ -42,6 +42,8 @@ class Product extends Component{
                     facebook
                     instagram
                     youtube
+                    numero_whatsapp
+                    mensaje_whatsapp
                   }
                 }
               }
