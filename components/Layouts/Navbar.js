@@ -75,7 +75,7 @@ class Navbar extends React.Component {
                     <div id="navbar" className={`crake-nav ${layOutCls}`}>
                         <div className="container">
                             <nav className="navbar navbar-expand-md navbar-light">
-                                <Link href="/saas">
+                                <Link href="/#banner">
                                     <a className="navbar-brand">
                                         <img src={logo} alt="logo" />
                                     </a>
